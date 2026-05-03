@@ -2,6 +2,8 @@
 AOA T4
 Nel Penin Yele
 
+Este documento consiste en crear números aleatorios a partir del método LGC para una clase Aleat y para una función aleat().
+
 """
 
 
@@ -9,6 +11,21 @@ Nel Penin Yele
 class Aleat :
 
     '''
+    Esta es una clase que representa un generador de números aleatorios. 
+    Utiliza el algoritmo de generación de números aleatorios de LCG.
+
+    Atributos :
+    m = 2**48  módulo
+    a = 25214903917   multiplicador
+    c = 11   incremento
+    x0 = 1212121  valor inicial o semilla
+
+    Métodos:
+     __init__(): Inicializa los atributos introducidos por clave
+     __next__(): devuelve el número aleaorio siguiente 
+     __call(): reinicia la secuencia con la semmila indicada en su argumento
+
+     
     >>> rand = Aleat(m=32, a=9, c=13, x0=11)
     >>> for _ in range(4):
     ...     print(next(rand))
@@ -43,6 +60,17 @@ class Aleat :
 
 def aleat(*, m = 2**48, a = 25214903917, c = 11, x0 = 1212121):
     """
+    Esta es una funcion que representa un generador de números aleatorios. 
+    Utiliza el algoritmo de generación de números aleatorios de LCG.
+
+    
+    Atributos :
+    m = 2**48  módulo
+    a = 25214903917   multiplicador
+    c = 11   incremento
+    x0 = 1212121  valor inicial o semilla
+
+    
     >>> rand = aleat(m=64, a=5, c=46, x0=36)
     >>> for _ in range(4):
     ...     print(next(rand))
